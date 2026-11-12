@@ -12,7 +12,7 @@ import winreg
 from cryptography.hazmat.primitives.asymmetric.ed25519 import Ed25519PublicKey
 
 APP = 'Autoskill Hominhtuan95'
-PUBLIC_KEY_HEX = 'REPLACE_WITH_PUBLIC_KEY'
+PUBLIC_KEY_HEX = '42606b7cb59bf775a622561bcf85c8a31c8f794f8375f33577763163609ecb7d'
 LICENSE_DIR = Path(os.getenv('LOCALAPPDATA', str(Path.home()))) / 'AutoskillHominhtuan95'
 LICENSE_FILE = LICENSE_DIR / 'license.txt'
 USER32 = ctypes.windll.user32
