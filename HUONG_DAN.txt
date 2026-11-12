@@ -1,0 +1,22 @@
+AUTOSKILL HOMINHTUAN95 - 4 CUA SO - 10 SKILL - HWID
+
+1. Tren Windows cai Python 3.11+ va chay:
+   python -m pip install cryptography
+2. Trong thu muc ma nguon, chay DUY NHAT MOT LAN:
+   python setup_license.py
+   Lenh tao PRIVATE_LICENSE_KEY.pem va dien khoa cong khai vao Autoskill_Hominhtuan95.py.
+   TUYET DOI KHONG DUA PRIVATE_LICENSE_KEY.pem LEN GITHUB.
+3. Tai file Autoskill_Hominhtuan95.py da duoc cap nhat va thu muc .github/workflows/build.yml len GitHub.
+   File workflow phai o DUNG duong dan .github/workflows/build.yml.
+4. Vao GitHub > Actions > Build Autoskill Hominhtuan95 EXE > Run workflow.
+   Tai file EXE trong Artifacts, giai nen ZIP va mo EXE.
+5. Khi chay EXE, sao chep HWID tren may can kich hoat.
+   Tren MAY GIU KHOA RIENG, chay:
+   python issue_license.py MA_HWID
+   Sao chep ma kich hoat va dan vao EXE tren may do.
+6. Mo toi da 4 cua so game, chon moi cua so trong moi o, bat checkbox phan mem muon auto.
+   F1 chi hoat dong khi cua so AutoSkill duoc focus; hoac bam nut BAT AUTO.
+
+Luu y: Gui phim qua PostMessageW; mot so game khong nhan phim nen can thu truc tiep.
+Mac dinh chi bat Tab va Space; hay tick nhung Skill muon dung. F1 khong phai global hotkey.
+Phien ban nay KHONG co Auto Train toa do va KHONG co Auto HP.
