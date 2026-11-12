@@ -1,0 +1,28 @@
+name: Build Autoskill Hominhtuan95 EXE
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'Autoskill_Hominhtuan95.py'
+      - '.github/workflows/build.yml'
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: python -m pip install pyinstaller cryptography
+      - name: Check license key and syntax
+        shell: pwsh
+        run: |
+          if (Select-String -Path Autoskill_Hominhtuan95.py -Pattern 'REPLACE_WITH_PUBLIC_KEY') { throw 'Chay setup_license.py tren may ca nhan va cap nhat file Python truoc khi build.' }
+          python -m py_compile Autoskill_Hominhtuan95.py
+      - name: Build EXE
+        run: python -m PyInstaller --onefile --windowed --name Autoskill_Hominhtuan95 Autoskill_Hominhtuan95.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Autoskill_Hominhtuan95_EXE
+          path: dist/Autoskill_Hominhtuan95.exe
